@@ -1,3 +1,4 @@
 amino.fix
 aiohttp
+websockets
 rich==11.1.0
