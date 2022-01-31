@@ -11,6 +11,7 @@ def login(email, password):
         console.print(f'[bold red][NMT][/bold red] Logged in as {client.get_user_info(client.userId).nickname}.')
     except:
         console.print_exception(show_locals=False)
+        exit()
 
 def get_path(link):
     path = client.get_from_code(link).path.split("/")
