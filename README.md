@@ -1,5 +1,5 @@
 # NMT-spam-amino
-MT + MC plus some new stuff. Amino chat raiding/spaming toolkit.
+MT + MC plus some new stuff. Amino chat raiding/spamming toolkit.
 
 # How to install and run/Как установить и запустить
 
