@@ -1,2 +1,3 @@
 amino.fix
+aiohttp
 rich==11.1.0
