@@ -1,8 +1,8 @@
-import aminofix
+import amino
 from threading import Thread
 from rich.console import Console
 from menu import *
-client = aminofix.Client()
+client = amino.Client()
 console = Console()
 
 def login(email, password):
@@ -23,11 +23,11 @@ def path_community(link):
     if get_path(link)[0] not in str(client.sub_clients().comId):
         client.join_community(get_path(link)[0])
         console.print(f'[bold red][NMT][/bold red] Joined {client.get_community_info(get_path(link)[0]).name}.')
-        sub_client = aminofix.SubClient(get_path(link)[0], profile = client.profile)
+        sub_client = amino.SubClient(get_path(link)[0], profile = client.profile)
         return sub_client
     else:
         console.print(f'[bold red][NMT][/bold red] {client.get_user_info(client.userId).nickname} is already a member of {client.get_community_info(get_path(link)[0]).name}.')
-        sub_client = aminofix.SubClient(get_path(link)[0], profile = client.profile)
+        sub_client = amino.SubClient(get_path(link)[0], profile = client.profile)
         return sub_client
 
 def path_chat(link, sub_client):
@@ -114,7 +114,7 @@ def main():
 
             comId = int(console.input("[bold red][NMT][/bold red] Community Id. >> "))
             print("\n")
-            sub_client = aminofix.SubClient(comId = comId, profile = client.profile)
+            sub_client = amino.SubClient(comId = comId, profile = client.profile)
 
             chat = sub_client.get_chat_threads(start = 0, size = 100)
             for title, chatId in zip(chat.title, chat.chatId):
@@ -136,7 +136,7 @@ def main():
             comId = int(console.input("[bold red][NMT][/bold red] Community Id. >> "))
             print("\n")
             
-            sub_client = aminofix.SubClient(comId, profile = client.profile)
+            sub_client = amino.SubClient(comId, profile = client.profile)
 
             chat = sub_client.get_chat_threads(start = 0, size = 100)
             for title, chatId in zip(chat.title, chat.chatId):
